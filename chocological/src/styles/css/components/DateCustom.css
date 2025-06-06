@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Expose";
+  src: url(fonts/Expose-Regular.otf) format("opentype");
+}
+.DateTime {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: right;
+  background-color: aquamarine;
+}
+.DateTime #date {
+  display: flex;
+  justify-content: left;
+}
+.DateTime #p-mes {
+  background-color: bisque;
+  margin: 0;
+  padding: 0;
+  font-family: "Expose", sans-serif;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff;
+}
+
+/*# sourceMappingURL=DateCustom.css.map */
