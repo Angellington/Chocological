@@ -2,11 +2,31 @@
   font-family: "Expose";
   src: url(fonts/Expose-Regular.otf) format("opentype");
 }
+@font-face {
+  font-family: "markin";
+  src: url(fonts/Markin.ttf) format("opentype");
+}
+body {
+  background-color: blueviolet;
+}
+
+.DateTime #p-dia, .DateTime #p-mes-except, .DateTime #bar, .DateTime #p-mes {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 4em;
+  width: fit-content;
+  height: fit-content;
+  -webkit-text-stroke: 18px #000;
+  paint-order: stroke fill;
+}
+
 .DateTime {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: right;
+  position: absolute;
   background-color: aquamarine;
 }
 .DateTime #date {
@@ -14,16 +34,30 @@
   justify-content: left;
 }
 .DateTime #p-mes {
-  background-color: bisque;
-  margin: 0;
-  padding: 0;
   font-family: "Expose", sans-serif;
+  position: relative;
   font-size: 4em;
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-  text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff;
+  transform: translate(2px, -20px) rotateZ(16deg);
+  z-index: 1;
+}
+.DateTime #bar {
+  position: relative;
+  line-height: 0;
+  font-size: 3em;
+  z-index: 1;
+  transform: translate(20px, -30px) rotateZ(36deg) rotateX(40deg);
+}
+.DateTime #p-mes-except {
+  font-family: "markin", sans-serif;
+  position: relative;
+  transform: rotateZ(16deg);
+}
+.DateTime #p-dia {
+  font-size: 5em;
+  font-family: "markin";
+  position: relative;
+  transform: rotateZ(4deg);
+  transform: translate(33px, -95px);
 }
 
 /*# sourceMappingURL=DateCustom.css.map */

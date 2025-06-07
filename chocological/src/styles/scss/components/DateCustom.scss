@@ -1,10 +1,37 @@
 $expose-font: 'fonts/Expose-Regular.otf';
+$markin: 'fonts/Markin.ttf';
+
+$white: #fff;
+$black: #000;
 
 @font-face {
     font-family: 'Expose';
     src: url(#{$expose-font}) format('opentype');
 }
+@font-face {
+    font-family: 'markin';
+    src: url(#{$markin}) format('opentype');
+}
 
+body {
+    background-color: blueviolet;
+}
+
+%base-text-style {
+    color: $white;
+    // background-color: bisque;
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    // display: flex;
+    // justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    -webkit-text-stroke: 18px $black;
+    paint-order: stroke fill;
+
+    // position: absolute;
+}
 
 
 .DateTime {
@@ -13,32 +40,52 @@ $expose-font: 'fonts/Expose-Regular.otf';
     width: 100%;
     justify-content: right;
 
-    background-color: aquamarine;
+    position: absolute;
 
+    background-color: aquamarine;
     #date {
         display: flex;
         justify-content: left;    
     }
 
     #p-mes {
+       @extend %base-text-style;
+       font-family: 'Expose', sans-serif;
+       position: relative;
+       font-size: 4em;
 
-        background-color: bisque;
+       transform: translate(2px, -20px) rotateZ(16deg);
+       z-index: 1;
+    }
 
-        margin: 0;
-        padding: 0;
+    #bar {
+        @extend %base-text-style;
+        position: relative;
+        line-height: 0;
+        font-size: 3em;
+        z-index: 1;
+        
 
-        font-family: 'Expose', sans-serif;
-        font-size: 4em;
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-        height: fit-content;
+        transform: translate(20px, -30px) rotateZ(36deg) rotateX(40deg);
 
+    }
 
-        text-shadow:     2px 0 0 #ffffff, 
-        -2px 0 0 #ffffff, 
-        0 2px 0 #ffffff, 
-        0 -2px 0 #ffffff;
-    
+    #p-mes-except {
+       @extend %base-text-style;
+       font-family: 'markin', sans-serif;
+
+       position: relative;
+       transform: rotateZ(16deg);
+
+    }
+
+    #p-dia {
+        @extend %base-text-style;
+        font-size: 5em;
+        font-family: 'markin';
+
+        position: relative;
+        transform: rotateZ(4deg);
+        transform: translate(33px, -95px); 
     }
 }

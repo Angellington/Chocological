@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 
 const DateCustom = () => {
   const [date, setDate] = useState(new Date());
+  const [mes, setMes] = useState(date.getMonth() + 1);
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date())
@@ -17,6 +19,7 @@ const DateCustom = () => {
     second: '2-digit',
     hour12: false // Formato 24h
   });
+
 
 
     // Traz os dias das semana
@@ -53,27 +56,15 @@ const DateCustom = () => {
     // console.log(weekday(date), 'weekday')
 
 
-
-
-
     let dia = date.getDay() + 1;
-    let mes = date.getMonth() + 1;
- 
-
-
     
-    // console.log(hora, 'hora')
-
-
-    // console.log(dia_semana_num, 'dia')
-
-    // console.log(dia_semana[dia_semana_num], 'dia_semana')
-    // let weekday = data.
-
 
   return (
     <div className="DateTime">
-      <p id='p-mes'>{mes}</p>
+      <p id={getMesId(mes)}>{mes}</p>
+      <p id='bar'>/</p>
+      <p id='p-dia'>{dia}</p>
+
       {/* <p id='date'>{dia}/{mes}</p>
       <p>{weekday}</p>
       <p>{hora_status}</p>
@@ -83,6 +74,28 @@ const DateCustom = () => {
       </div>
   )
 }
+
+const getMesId = (mes) => {
+  switch (mes) {
+    case 2:
+      return 'p-mes-except';
+    case 7:
+      return 'p-mes-except';
+    case 8:
+      return 'p-mes-except';
+    case 9:
+      return 'p-mes-except';
+    case 10:
+      return 'p-mes-except';
+    case 11:
+      return 'p-mes-except';
+    case 12:
+      return 'p-mes-except'
+    default:
+      return 'p-mes'
+  }
+}
+
 
 export default DateCustom
 
