@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 
 const DateCustom = () => {
   const [date, setDate] = useState(new Date());
-  const [mes, setMes] = useState(date.getMonth() + 1);
+  // const [mes, setMes] = useState(date.getMonth() + 1);
+  const [mes, setMes] = useState(12);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -58,11 +59,19 @@ const DateCustom = () => {
 
     let dia = date.getDay() + 1;
     
+    
 
   return (
     <div className="DateTime">
-      <p id={getMesId(mes)}>{mes}</p>
-      <p id='bar'>/</p>
+      <div className='MonthContainer'>
+        <p className={getMesId(mes)}>{mes}</p>
+        <p className={`${getMesId(mes)}-stroke`}>{mes}</p>
+      </div>
+      <div className='BarContainer'>
+        <div className='bar'></div>
+        <div className='bar-stroke'></div>
+      </div>
+      <div className='bar'></div>
       <p id='p-dia'>{dia}</p>
 
       {/* <p id='date'>{dia}/{mes}</p>
@@ -86,11 +95,11 @@ const getMesId = (mes) => {
     case 9:
       return 'p-mes-except';
     case 10:
-      return 'p-mes-except';
+      return 'p-mes-except-decimal';
     case 11:
-      return 'p-mes-except';
+      return 'p-mes-except-decimal';
     case 12:
-      return 'p-mes-except'
+      return 'p-mes-except-decimal'
     default:
       return 'p-mes'
   }

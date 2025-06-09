@@ -19,18 +19,23 @@ body {
 
 %base-text-style {
     color: $white;
-    // background-color: bisque;
     margin: 0;
     padding: 0;
     font-size: 4em;
-    // display: flex;
-    // justify-content: center;
     width: fit-content;
     height: fit-content;
-    -webkit-text-stroke: 18px $black;
+    -webkit-text-stroke: 15px $black;
     paint-order: stroke fill;
-
-    // position: absolute;
+}
+%base-text-stroke-style {
+    color: $white;
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    width: fit-content;
+    height: fit-content;
+    -webkit-text-stroke: 24px $white;
+    paint-order: stroke fill;
 }
 
 
@@ -48,36 +53,83 @@ body {
         justify-content: left;    
     }
 
-    #p-mes {
-       @extend %base-text-style;
-       font-family: 'Expose', sans-serif;
-       position: relative;
-       font-size: 4em;
+    .MonthContainer {
+        background-color: beige;
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
 
-       transform: translate(2px, -20px) rotateZ(16deg);
-       z-index: 1;
-    }
-
-    #bar {
-        @extend %base-text-style;
-        position: relative;
         line-height: 0;
-        font-size: 3em;
-        z-index: 1;
-        
 
-        transform: translate(20px, -30px) rotateZ(36deg) rotateX(40deg);
+        .p-mes {
+            @extend %base-text-style;
+            font-family: 'Expose', sans-serif;
+            position: relative;
+            font-size: 4em;
+     
+            transform: translate(2px, -20px) rotateZ(16deg);
+            z-index: 3;
+         }
+         .p-mes-except {
+            @extend %base-text-style;
+            font-family: 'markin', sans-serif;
+    
+            position: relative;
+            transform: rotateZ(6deg) translateX(-23px) translateY(-16px);
+            z-index: 1;
+         }
+         .p-mes-except-decimal {
+            @extend %base-text-style;
+            font-family: 'markin', sans-serif;
+    
+            position: relative;
+            transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
+            z-index: 1;
+         }
+         .p-mes-stroke {
+            @extend %base-text-stroke-style;
+            font-family: 'Expose', sans-serif;
+            position: relative;
+            font-size: 4em;
+     
+            transform: translate(2px, -20px) rotateZ(16deg);
+            z-index: 0;
+         }
+         .p-mes-except-stroke {
+            @extend .p-mes-stroke;
+            font-family: 'markin', sans-serif;
+            transform: rotateZ(9deg) translateX(-23px) translateY(-16px);
+            z-index: 0;
+          }
+          .p-mes-except-decimal-stroke {
+            @extend .p-mes-stroke;
+            font-family: 'markin', sans-serif;
+            transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
+            z-index: 0;
+          }
 
     }
 
-    #p-mes-except {
-       @extend %base-text-style;
-       font-family: 'markin', sans-serif;
-
-       position: relative;
-       transform: rotateZ(16deg);
-
+    .BarContainer {
+        position: absolute;
+        .bar {
+            // @extend %base-text-style;
+            position: relative;
+            background-color: $white;
+            width: 50px;
+            height: 10px;
+            line-height: 0;
+            font-size: 3em;
+            z-index: 1;
+            transform: translate(0px, 5px) rotateZ(144deg) rotateX(52deg);
+        }
+    
     }
+
+    
+
+
+
 
     #p-dia {
         @extend %base-text-style;
