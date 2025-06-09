@@ -10,7 +10,7 @@ body {
   background-color: blueviolet;
 }
 
-.DateTime #p-dia, .DateTime .MonthContainer .p-mes-except-decimal, .DateTime .MonthContainer .p-mes-except, .DateTime .MonthContainer .p-mes {
+.DateTime .p-dia, .DateTime .MonthContainer .p-mes-except-decimal, .DateTime .MonthContainer .p-mes-except, .DateTime .MonthContainer .p-mes {
   color: #fff;
   margin: 0;
   padding: 0;
@@ -56,51 +56,98 @@ body {
   position: relative;
   font-size: 4em;
   transform: translate(2px, -20px) rotateZ(16deg);
-  z-index: 3;
+  z-index: 2;
 }
 .DateTime .MonthContainer .p-mes-except {
   font-family: "markin", sans-serif;
   position: relative;
   transform: rotateZ(6deg) translateX(-23px) translateY(-16px);
-  z-index: 1;
+  z-index: 2;
 }
 .DateTime .MonthContainer .p-mes-except-decimal {
   font-family: "markin", sans-serif;
   position: relative;
   transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
-  z-index: 1;
+  z-index: 2;
 }
 .DateTime .MonthContainer .p-mes-stroke, .DateTime .MonthContainer .p-mes-except-decimal-stroke, .DateTime .MonthContainer .p-mes-except-stroke {
   font-family: "Expose", sans-serif;
   position: relative;
   font-size: 4em;
   transform: translate(2px, -20px) rotateZ(16deg);
-  z-index: 0;
+  z-index: 1;
 }
 .DateTime .MonthContainer .p-mes-except-stroke {
   font-family: "markin", sans-serif;
   transform: rotateZ(9deg) translateX(-23px) translateY(-16px);
-  z-index: 0;
+  z-index: 1;
 }
 .DateTime .MonthContainer .p-mes-except-decimal-stroke {
   font-family: "markin", sans-serif;
   transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
-  z-index: 0;
+  z-index: 1;
 }
 .DateTime .BarContainer {
   position: absolute;
+  perspective: 800px;
+  perspective-origin: center;
 }
 .DateTime .BarContainer .bar {
   position: relative;
   background-color: #fff;
-  width: 50px;
+  width: 60px;
   height: 10px;
   line-height: 0;
   font-size: 3em;
   z-index: 1;
-  transform: translate(0px, 5px) rotateZ(144deg) rotateX(52deg);
+  transform: translate(0px, 13px) rotateZ(149deg) rotateX(52deg);
+  z-index: 3;
 }
-.DateTime #p-dia {
+.DateTime .BarContainer .bar-stroke {
+  position: relative;
+  background-color: #fff;
+  width: 70px;
+  height: 26px;
+  line-height: 0;
+  font-size: 3em;
+  z-index: 1;
+  transform: translate(-16px, -43px) rotateZ(149deg) rotateX(52deg);
+  z-index: -2;
+}
+.DateTime .BarContainer .bar-2 {
+  position: relative;
+  background-color: #000;
+  width: 60px;
+  height: 20px;
+  line-height: 0;
+  font-size: 3em;
+  z-index: 1;
+  transform: translate(-8px, -1px) rotateZ(149deg) rotateX(52deg);
+  z-index: -1;
+}
+.DateTime .BarContainer .bar-2-stroke {
+  position: relative;
+  background-color: #fff;
+  width: 70px;
+  height: 26px;
+  line-height: 0;
+  font-size: 3em;
+  z-index: 1;
+  transform: translate(-4px, -62px) rotateZ(152deg) rotateX(55deg);
+  z-index: -2;
+}
+.DateTime .BarContainer .bar-3 {
+  position: relative;
+  background-color: #000;
+  width: 60px;
+  height: 20px;
+  line-height: 0;
+  font-size: 3em;
+  z-index: 1;
+  transform: translate(0px, -16px) rotateZ(153deg) rotateX(52deg);
+  z-index: -1;
+}
+.DateTime .p-dia {
   font-size: 5em;
   font-family: "markin";
   position: relative;

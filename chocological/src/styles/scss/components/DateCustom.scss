@@ -68,7 +68,7 @@ body {
             font-size: 4em;
      
             transform: translate(2px, -20px) rotateZ(16deg);
-            z-index: 3;
+            z-index: 2;
          }
          .p-mes-except {
             @extend %base-text-style;
@@ -76,7 +76,7 @@ body {
     
             position: relative;
             transform: rotateZ(6deg) translateX(-23px) translateY(-16px);
-            z-index: 1;
+            z-index: 2;
          }
          .p-mes-except-decimal {
             @extend %base-text-style;
@@ -84,7 +84,7 @@ body {
     
             position: relative;
             transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
-            z-index: 1;
+            z-index: 2;
          }
          .p-mes-stroke {
             @extend %base-text-stroke-style;
@@ -93,35 +93,84 @@ body {
             font-size: 4em;
      
             transform: translate(2px, -20px) rotateZ(16deg);
-            z-index: 0;
+            z-index: 1;
          }
          .p-mes-except-stroke {
             @extend .p-mes-stroke;
             font-family: 'markin', sans-serif;
             transform: rotateZ(9deg) translateX(-23px) translateY(-16px);
-            z-index: 0;
+            z-index: 1;
           }
           .p-mes-except-decimal-stroke {
             @extend .p-mes-stroke;
             font-family: 'markin', sans-serif;
             transform: rotateZ(6deg) translateX(-40px) translateY(-16px);
-            z-index: 0;
+            z-index: 1;
           }
 
     }
 
     .BarContainer {
         position: absolute;
+        perspective: 800px;
+        perspective-origin: center;
         .bar {
             // @extend %base-text-style;
             position: relative;
             background-color: $white;
-            width: 50px;
+            width: 60px;
             height: 10px;
             line-height: 0;
             font-size: 3em;
             z-index: 1;
-            transform: translate(0px, 5px) rotateZ(144deg) rotateX(52deg);
+            transform: translate(0px, 13px) rotateZ(149deg) rotateX(52deg);
+            z-index: 3;
+        }
+        .bar-stroke {
+            position: relative;
+            background-color: #fff;
+            width: 70px;
+            height: 26px;
+            line-height: 0;
+            font-size: 3em;
+            z-index: 1;
+            transform: translate(-16px, -43px) rotateZ(149deg) rotateX(52deg);
+            z-index: -2;
+        }
+        .bar-2 {
+            // @extend %base-text-style;
+            position: relative;
+            background-color: $black;
+            width: 60px;
+            height: 20px;
+            line-height: 0;
+            font-size: 3em;
+            z-index: 1;
+            transform: translate(-8px, -1px) rotateZ(149deg) rotateX(52deg);
+            z-index: -1;
+        }
+        .bar-2-stroke {
+            position: relative;
+            background-color: #fff;
+            width: 70px;
+            height: 26px;
+            line-height: 0;
+            font-size: 3em;
+            z-index: 1;
+            transform: translate(-4px, -62px) rotateZ(152deg) rotateX(55deg);
+            z-index: -2;
+        }
+        .bar-3 {
+            // @extend %base-text-style;
+            position: relative;
+            background-color: $black;
+            width: 60px;
+            height: 20px;
+            line-height: 0;
+            font-size: 3em;
+            z-index: 1;
+            transform: translate(0px, -16px) rotateZ(153deg) rotateX(52deg);
+            z-index: -1;
         }
     
     }
@@ -131,7 +180,7 @@ body {
 
 
 
-    #p-dia {
+    .p-dia {
         @extend %base-text-style;
         font-size: 5em;
         font-family: 'markin';

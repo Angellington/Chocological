@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react'
 
 const DateCustom = () => {
   const [date, setDate] = useState(new Date());
-  // const [mes, setMes] = useState(date.getMonth() + 1);
-  const [mes, setMes] = useState(12);
+  const [mes, setMes] = useState(date.getMonth() + 1);
+  const [dia, setDia] = useState(date.getDate())
+  // const [mes, setMes] = useState(1);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -55,9 +56,7 @@ const DateCustom = () => {
     }
 
     // console.log(weekday(date), 'weekday')
-
-
-    let dia = date.getDay() + 1;
+    // let dia = date.getDay() + 1;
     
     
 
@@ -69,10 +68,15 @@ const DateCustom = () => {
       </div>
       <div className='BarContainer'>
         <div className='bar'></div>
+        <div className='bar-2'></div>
+        <div className='bar-3'></div>
         <div className='bar-stroke'></div>
+        <div className='bar-2-stroke'></div>
       </div>
       <div className='bar'></div>
-      <p id='p-dia'>{dia}</p>
+      <div className="DayContainer">
+        <p className='p-dia'>{dia}</p>
+      </div>
 
       {/* <p id='date'>{dia}/{mes}</p>
       <p>{weekday}</p>
