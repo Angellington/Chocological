@@ -40,10 +40,10 @@ body {
 
 
 .DateTime {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: right;
+    // display: flex;
+    // flex-direction: column;
+    width: fit-content;
+    // justify-content: right;
 
     position: absolute;
 
@@ -172,21 +172,159 @@ body {
             transform: translate(0px, -16px) rotateZ(153deg) rotateX(52deg);
             z-index: -1;
         }
-    
     }
-
+    .DayContainer {
+        position: absolute;
+        line-height: 0;
+        .p-dia {
+            @extend %base-text-style;
+            font-size: 6em;
+            font-family: 'markin';
     
-
-
-
-
-    .p-dia {
-        @extend %base-text-style;
-        font-size: 5em;
-        font-family: 'markin';
-
+            position: relative;
+            transform: translate(26px, -4px);
+            z-index: 3;
+        }
+        .p-dia-stroke {
+            @extend %base-text-stroke-style;
+            font-size: 5.8em;
+            font-family: 'markin';
+    
+            position: relative;
+            transform: translate(26px, -5px);
+            z-index: -1;
+        }
+    }
+    .WeekdayContainer {
+        line-height: 0;
+        z-index: 6;
         position: relative;
-        transform: rotateZ(4deg);
-        transform: translate(33px, -95px); 
+        .weekday {
+            @extend %base-text-style;
+            filter: invert(1);
+            font-size: 2em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: 4;
+            position: absolute;
+            
+            transform: translate(26px, 30px) rotate(-10deg) rotateY(35deg);
+        }
+        .weekday-stroke {
+            @extend %base-text-stroke-style;
+            filter: invert(0);
+            font-size: 2.15em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: 1;
+            position: absolute;
+            transform: translate(22px, 32px) rotate(-10deg) rotateY(35deg);
+        }.weekday-stroke-2 {
+            @extend %base-text-stroke-style;
+            filter: invert(1);
+            font-size: 2.15em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: 0;
+            position: absolute;
+            transform: translate(18px, 36px) rotate(-10deg) rotateY(35deg);
+        }
+        .weekday-stroke-3 {
+            @extend %base-text-stroke-style;
+            filter: invert(1);
+            font-size: 2.15em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: -1;
+            position: absolute;
+            transform: translate(24px, 34px) rotate(-10deg) rotateY(35deg);
+        } .weekday-stroke-4 {
+            @extend %base-text-stroke-style;
+            filter: invert(0);
+            font-size: 2.18em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: -5;
+            position: absolute;
+            transform: translate(19px, 30px) rotate(-10deg) rotateY(35deg);
+        }
     }
+    .Hour-Container {
+        line-height: 0;
+        position: absolute;
+        z-index: 10;
+    
+        .Hour {
+            @extend %base-text-style;
+            filter: invert(1);
+            font-size: 2.3em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: 4;
+            position: absolute;
+            
+            transform: translate(-46px, 63px) rotate(-20deg) rotateY(50deg);
+        }
+        .Hour-stroke {
+            @extend %base-text-stroke-style;
+            filter: invert(0);
+            font-size: 2.3em;
+            font-family: 'Markin';
+            -webkit-text-stroke: 8px $black;
+            z-index: 0;
+            position: absolute;
+            -webkit-text-stroke: 14px $black;
+
+            transform: translate(-46px, 63px) rotate(-20deg) rotateY(50deg);
+        }
+    }
+    .TimeNow-Container {
+        line-height: 0;
+        position: absolute;
+        z-index: 10;
+    
+        .p-TimeNow {
+            @extend %base-text-style;
+            font-family: 'Martir';
+            font-size: 1.5em;
+            position: relative;
+            -webkit-text-stroke: 10px $black;
+            z-index: 4;
+            transform: translate(190px, -60px) rotate(-10deg);
+        }
+        .p-TimeNow-stroke {
+            @extend %base-text-style;
+            font-family: 'Martir';
+            font-size: 1.5em;
+            position: relative;
+            -webkit-text-stroke: 12px $white;
+            z-index: 3;
+            transform: translate(190px, -60px) rotate(-10deg);
+        }
+    }
+    .Season-Container {
+        line-height: 0;
+        position: absolute;
+        z-index: 2;
+        background-color: $white;
+
+        width: 120px;
+        height: 60px;
+        transform: translate(63px, -49px) rotate(-11deg);
+        overflow: hidden;
+        .Season-Emoti {
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            scale: 0.10;
+            transform: translate(-1680px, -2250px);
+        }
+    }
+    
+    
+
+
+
+
+
 }

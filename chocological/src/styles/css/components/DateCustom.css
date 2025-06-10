@@ -10,7 +10,7 @@ body {
   background-color: blueviolet;
 }
 
-.DateTime .p-dia, .DateTime .MonthContainer .p-mes-except-decimal, .DateTime .MonthContainer .p-mes-except, .DateTime .MonthContainer .p-mes {
+.DateTime .TimeNow-Container .p-TimeNow-stroke, .DateTime .TimeNow-Container .p-TimeNow, .DateTime .Hour-Container .Hour, .DateTime .WeekdayContainer .weekday, .DateTime .DayContainer .p-dia, .DateTime .MonthContainer .p-mes-except-decimal, .DateTime .MonthContainer .p-mes-except, .DateTime .MonthContainer .p-mes {
   color: #fff;
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@ body {
   paint-order: stroke fill;
 }
 
-.DateTime .MonthContainer .p-mes-stroke, .DateTime .MonthContainer .p-mes-except-decimal-stroke, .DateTime .MonthContainer .p-mes-except-stroke {
+.DateTime .Hour-Container .Hour-stroke, .DateTime .WeekdayContainer .weekday-stroke-4, .DateTime .WeekdayContainer .weekday-stroke-3, .DateTime .WeekdayContainer .weekday-stroke-2, .DateTime .WeekdayContainer .weekday-stroke, .DateTime .DayContainer .p-dia-stroke, .DateTime .MonthContainer .p-mes-stroke, .DateTime .MonthContainer .p-mes-except-decimal-stroke, .DateTime .MonthContainer .p-mes-except-stroke {
   color: #fff;
   margin: 0;
   padding: 0;
@@ -33,10 +33,7 @@ body {
 }
 
 .DateTime {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: right;
+  width: fit-content;
   position: absolute;
   background-color: aquamarine;
 }
@@ -147,12 +144,135 @@ body {
   transform: translate(0px, -16px) rotateZ(153deg) rotateX(52deg);
   z-index: -1;
 }
-.DateTime .p-dia {
-  font-size: 5em;
+.DateTime .DayContainer {
+  position: absolute;
+  line-height: 0;
+}
+.DateTime .DayContainer .p-dia {
+  font-size: 6em;
   font-family: "markin";
   position: relative;
-  transform: rotateZ(4deg);
-  transform: translate(33px, -95px);
+  transform: translate(26px, -4px);
+  z-index: 3;
+}
+.DateTime .DayContainer .p-dia-stroke {
+  font-size: 5.8em;
+  font-family: "markin";
+  position: relative;
+  transform: translate(26px, -5px);
+  z-index: -1;
+}
+.DateTime .WeekdayContainer {
+  line-height: 0;
+  z-index: 6;
+  position: relative;
+}
+.DateTime .WeekdayContainer .weekday {
+  filter: invert(1);
+  font-size: 2em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: 4;
+  position: absolute;
+  transform: translate(26px, 30px) rotate(-10deg) rotateY(35deg);
+}
+.DateTime .WeekdayContainer .weekday-stroke {
+  filter: invert(0);
+  font-size: 2.15em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: 1;
+  position: absolute;
+  transform: translate(22px, 32px) rotate(-10deg) rotateY(35deg);
+}
+.DateTime .WeekdayContainer .weekday-stroke-2 {
+  filter: invert(1);
+  font-size: 2.15em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: 0;
+  position: absolute;
+  transform: translate(18px, 36px) rotate(-10deg) rotateY(35deg);
+}
+.DateTime .WeekdayContainer .weekday-stroke-3 {
+  filter: invert(1);
+  font-size: 2.15em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: -1;
+  position: absolute;
+  transform: translate(24px, 34px) rotate(-10deg) rotateY(35deg);
+}
+.DateTime .WeekdayContainer .weekday-stroke-4 {
+  filter: invert(0);
+  font-size: 2.18em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: -5;
+  position: absolute;
+  transform: translate(19px, 30px) rotate(-10deg) rotateY(35deg);
+}
+.DateTime .Hour-Container {
+  line-height: 0;
+  position: absolute;
+  z-index: 10;
+}
+.DateTime .Hour-Container .Hour {
+  filter: invert(1);
+  font-size: 2.3em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: 4;
+  position: absolute;
+  transform: translate(-46px, 63px) rotate(-20deg) rotateY(50deg);
+}
+.DateTime .Hour-Container .Hour-stroke {
+  filter: invert(0);
+  font-size: 2.3em;
+  font-family: "Markin";
+  -webkit-text-stroke: 8px #000;
+  z-index: 0;
+  position: absolute;
+  -webkit-text-stroke: 14px #000;
+  transform: translate(-46px, 63px) rotate(-20deg) rotateY(50deg);
+}
+.DateTime .TimeNow-Container {
+  line-height: 0;
+  position: absolute;
+  z-index: 10;
+}
+.DateTime .TimeNow-Container .p-TimeNow {
+  font-family: "Martir";
+  font-size: 1.5em;
+  position: relative;
+  -webkit-text-stroke: 10px #000;
+  z-index: 4;
+  transform: translate(190px, -60px) rotate(-10deg);
+}
+.DateTime .TimeNow-Container .p-TimeNow-stroke {
+  font-family: "Martir";
+  font-size: 1.5em;
+  position: relative;
+  -webkit-text-stroke: 12px #fff;
+  z-index: 3;
+  transform: translate(190px, -60px) rotate(-10deg);
+}
+.DateTime .Season-Container {
+  line-height: 0;
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  width: 120px;
+  height: 60px;
+  transform: translate(63px, -49px) rotate(-11deg);
+  overflow: hidden;
+}
+.DateTime .Season-Container .Season-Emoti {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  scale: 0.1;
+  transform: translate(-1680px, -2250px);
 }
 
 /*# sourceMappingURL=DateCustom.css.map */

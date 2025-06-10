@@ -5,6 +5,7 @@ const DateCustom = () => {
   const [date, setDate] = useState(new Date());
   const [mes, setMes] = useState(date.getMonth() + 1);
   const [dia, setDia] = useState(date.getDate())
+  // const [dia, setDia] = useState(12)
   // const [mes, setMes] = useState(1);
 
   useEffect(() => {
@@ -26,9 +27,10 @@ const DateCustom = () => {
 
     // Traz os dias das semana
     const weekday = (date) => {
-      const dias = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const dias = ['SunDaY', 'MonDaY', 'TuesDaY', 'WeDnesday', 'ThursDaY', 'FriDaY', 'SaturDaY'];
       return dias[date.getDay()];
     }
+    // console.log(weekday(date))
 
     const hora_status = (date) => {
       const day_status = ['Morning', 'Afternoon', 'Evening', 'Night'];
@@ -76,6 +78,28 @@ const DateCustom = () => {
       <div className='bar'></div>
       <div className="DayContainer">
         <p className='p-dia'>{dia}</p>
+        <p className='p-dia-stroke'>{dia}</p>
+      </div>
+      <div className='WeekdayContainer'>
+        <p className='weekday'>{weekday(date)}</p>
+        <p className='weekday-stroke'>{weekday(date)}</p>
+        <p className='weekday-stroke-2'>{weekday(date)}</p>
+        <p className='weekday-stroke-3'>{weekday(date)}</p>
+        <p className='weekday-stroke-4'>{weekday(date)}</p>
+      </div>
+      <div className='Hour-Container'>
+        <p className='Hour'>{hora_status(date)}</p>
+        <p className='Hour-stroke'>{hora_status(date)}</p>
+      </div>
+      <div className='TimeNow-Container'>
+        <p className='p-TimeNow'>{horario}</p>
+        <p className='p-TimeNow-stroke'>{horario}</p>
+      </div>
+      <div className="Season-Container">
+        {getSeason(date) === 'Summer' ? <img className='Season-Emoti' src='/emoti/spring-sun.png'></img> : null}
+        {getSeason(date) === 'Winter' ? <img className='Season-Emoti' src='/emoti/floco-de-neve.png'></img> : null}
+        {getSeason(date) === 'Fall' ? <img className='Season-Emoti' src='/emoti/folha-de-outono.png'></img> : null}
+        {getSeason(date) === 'Spring' ? <img className='Season-Emoti' src='/emoti/spring-sun.png'></img> : null}
       </div>
 
       {/* <p id='date'>{dia}/{mes}</p>
@@ -108,6 +132,26 @@ const getMesId = (mes) => {
       return 'p-mes'
   }
 }
+
+function getSeason(date) {
+  const dia = date.getDate();
+  const mes = date.getMonth(); // Janeiro = 0, Dezembro = 11
+
+  if ((mes === 11 && dia >= 21) || mes === 0 || mes === 1 || (mes === 2 && dia < 20)) {
+    return 'Summer'; // 21 de Dezembro a 19 de Março
+  }
+
+  if ((mes === 2 && dia >= 20) || mes === 3 || mes === 4 || (mes === 5 && dia < 20)) {
+    return 'Fall'; // 20 de Março a 19 de Junho
+  }
+
+  if ((mes === 5 && dia >= 20) || mes === 6 || mes === 7 || (mes === 8 && dia < 22)) {
+    return 'Winter'; // 20 de Junho a 21 de Setembro
+  }
+
+  return 'Spring'; // 22 de Setembro a 20 de Dezembro
+}
+
 
 
 export default DateCustom
