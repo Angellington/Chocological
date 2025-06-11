@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DateCustom from './components/DateCustom'
 import MusicPlayer from './components/MusicPlayer'
+import Chocolate from './components/Chocolate'
 import './styles/css/App.css'
 
 
@@ -21,11 +22,21 @@ function App() {
        </button>
      </div>
     ) : (
-      <div>
-        <MusicPlayer/>
-        <p>Teste</p>
-        <DateCustom />
-      </div>
+      <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+  <MusicPlayer />
+  <div style={{ position: 'fixed', top: 0, left: 0,
+    padding: '10px',
+    zIndex: 10
+  }}>
+    <DateCustom />
+  </div>
+  <div style={{ width: '100%', height: '100%', display: 'flex',justifyContent: 'center', alignItems: 'center'
+  }}>
+    <Chocolate />
+  </div>
+</div>
+
+      
     )}
       
     </>

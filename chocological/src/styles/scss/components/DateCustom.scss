@@ -44,10 +44,12 @@ body {
     // flex-direction: column;
     width: fit-content;
     // justify-content: right;
+    // position: left;
 
     position: absolute;
 
     background-color: aquamarine;
+    margin: 6rem 0rem 0rem 4rem;
     #date {
         display: flex;
         justify-content: left;    
@@ -290,7 +292,7 @@ body {
             position: relative;
             -webkit-text-stroke: 10px $black;
             z-index: 4;
-            transform: translate(190px, -60px) rotate(-10deg);
+            transform: translate(200px, -60px) rotate(-10deg);
         }
         .p-TimeNow-stroke {
             @extend %base-text-style;
@@ -299,7 +301,7 @@ body {
             position: relative;
             -webkit-text-stroke: 12px $white;
             z-index: 3;
-            transform: translate(190px, -60px) rotate(-10deg);
+            transform: translate(200px, -60px) rotate(-10deg);
         }
     }
     .Season-Container {
@@ -308,7 +310,7 @@ body {
         z-index: 2;
         background-color: $white;
 
-        width: 120px;
+        width: 130px;
         height: 60px;
         transform: translate(63px, -49px) rotate(-11deg);
         overflow: hidden;
@@ -317,7 +319,7 @@ body {
             width: fit-content;
             height: fit-content;
             scale: 0.10;
-            transform: translate(-1680px, -2250px);
+            transform: translate(-1530px, -2250px);
         }
     }
     

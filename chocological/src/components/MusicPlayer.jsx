@@ -16,7 +16,7 @@ const MusicPlayer = () => {
     }, [])
 
   return (
-    <audio ref={audioRef} src="/music/Beneath-the-Mask.mp3" preload="auto" loop />
+    <audio ref={audioRef} src="/music/Beneath.mp3" preload="auto" loop />
   )
 }
 
