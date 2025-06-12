@@ -12,10 +12,10 @@ function App() {
   return (
     <>
     {!enter ? (
-       <div className="h-screen flex flex-col justify-center items-center bg-black text-white">
+       <div className="title">
        <h1 className="text-2xl mb-4">Boas-vindas</h1>
        <button
-         className="bg-white text-black px-6 py-2 rounded-xl"
+         className="btn-rounded"
          onClick={() => setEnter(true)}
        >
          Entrar
