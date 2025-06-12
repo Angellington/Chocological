@@ -8,14 +8,17 @@
   overflow: auto;
   position: relative;
   cursor: pointer;
+
 }
 
 .chocolate img {
   width: auto;
-  height: auto;
+  height: 90vh;
   max-width: none;
   max-height: none;
   display: block;
+  transform: translate(25px, 100px);
+
 }
 
 .explosion {
@@ -71,6 +74,13 @@
     transform: translate(-50%, -50%);
     overflow: visible;
   }
+  .chocolate img {
+    width: auto;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    display: block;
+}
 }
 @media (min-width: 768px) and (min-width: 768px) {
   .shokoDrawn {
