@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Expose";
-  src: url(fonts/Expose-Regular.otf) format("opentype");
+  src: url("/fonts/Expose-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "markin";
-  src: url(fonts/Markin.ttf) format("opentype");
+  src: url("/fonts/Markin.ttf") format("truetype");
 }
 body {
   background-color: blueviolet;
